@@ -1,19 +1,20 @@
 
 # LARSEN ET AL. 2026 | FSS-GAMM: WHAT PREDICTS FISHING PRESSURE?
-# Standalone complementary analysis; does NOT change existing fish-response models.
+# Standalone complementary analysis.
 # Response: New_Log_RS (transformed fishing-pressure index).
 # Candidate ecological predictors: five 2D/3D geomorphological/seascape metrics.
 # Baseline: spatial smooths + habitat random intercept, as in existing workflow.
 # Model ranking: ML AICc; selected model refit by REML for diagnostics/plots.
 # All candidate combinations have 0, 1 or 2 ecological predictors.
 # Requires: FSSgam, mgcv, MuMIn, ggplot2, cowplot; DHARMa for diagnostics.
-
+# Ensure habitat, longitude and latitude are in the master file
+# Coordinates are removed from the public dataset to protect site locations.
+# Add your own to run the spatial smooth terms.
 
 # ---- 0. EDIT THESE SETTINGS --------------------------------------------------
 PROJECT_DIR <- "input" # Where user wants project directory
 DATA_FILE <- file.path(PROJECT_DIR, "input") # Add master csv data file
 
-# Dedicated folder; does not overwrite combined_reef_gamms_REVISED analyses.
 OUT_DIR <- file.path(PROJECT_DIR, "Fishing_Pressure_GAMMS",
                      "Outputs")
 
@@ -26,7 +27,7 @@ CONTINUOUS_PREDICTORS <- c(
   "prox_index_rocky_reef_500m_log"
 )
 
-# Keep habitat as a RANDOM intercept, matching your latest working analysis.
+# Keep habitat as a RANDOM intercept.
 INCLUDE_HABITAT_RANDOM_EFFECT <- TRUE
 INCLUDE_SITE_RANDOM_EFFECT <- FALSE
 SITE_COLUMN <- "site"     # Only needed if INCLUDE_SITE_RANDOM_EFFECT = TRUE.
