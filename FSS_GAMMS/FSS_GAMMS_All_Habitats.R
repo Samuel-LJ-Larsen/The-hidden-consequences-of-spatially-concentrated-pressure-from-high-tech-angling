@@ -4,6 +4,9 @@
 # Model selection: ML + AICc. Selected model presentation: REML.
 # Exports: fitted models, candidate tables, diagnostics, combined figures.
 # Run in RStudio with Source. Designed for FSSgam >= 1.2.0.
+# Ensure habitat, longitude and latitude are in the master file
+# Coordinates are removed from the public dataset to protect site locations.
+# Add your own to run the spatial smooth terms.
 
 # ---- 0. USER SETTINGS --------------------------------------------------------
 PROJECT_DIR <- "input" # Where user wants project directory
