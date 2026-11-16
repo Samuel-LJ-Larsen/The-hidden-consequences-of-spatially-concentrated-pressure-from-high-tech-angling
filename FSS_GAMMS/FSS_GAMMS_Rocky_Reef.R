@@ -776,13 +776,13 @@ if (file.exists(selected_file)) {
     stop("Selection file needs columns: response, family, file")
   }
 } else {
-  # Compatibility with the original (pre-revision) FSS script.
+  # Manual family selection.
   selected_file <- file.path(ROOT, "FAMILY_SELECTION.csv")
   if (!file.exists(selected_file)) stop("No model selection CSV in: ", ROOT)
   selected <- read.csv(selected_file, stringsAsFactors = FALSE)
   selected$file <- file.path(ROOT, selected$response, selected$family, "models",
                              paste0("best_REML_", selected$family, "_", selected$response, ".rds"))
-  warning("Older FAMILY_SELECTION.csv used; previously selected models can reflect old ranking.")
+  warning("FAMILY_SELECTION.csv used")
 }
 
 if (anyDuplicated(selected$response)) stop("Multiple selected model rows for the same response")
