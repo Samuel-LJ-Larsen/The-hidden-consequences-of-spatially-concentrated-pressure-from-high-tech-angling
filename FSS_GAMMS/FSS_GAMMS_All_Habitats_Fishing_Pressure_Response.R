@@ -9,7 +9,7 @@
 # Requires: FSSgam, mgcv, MuMIn, ggplot2, cowplot; DHARMa for diagnostics.
 # Ensure habitat, longitude and latitude are in the master file
 # Coordinates are removed from the public dataset to protect site locations.
-# Add your own to run the spatial smooth terms.
+# Add your own coordinates to run the spatial smooth terms.
 
 # ---- 0. EDIT THESE SETTINGS --------------------------------------------------
 PROJECT_DIR <- "input" # Where user wants project directory
