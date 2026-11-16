@@ -33,7 +33,7 @@
 library(dplyr)          # Data manipulation
 library(tidyr)          # Data tidying
 library(stringr)        # String operations
-install.packages("glmmTMB", type = "source")       # Generalized linear mixed models
+library(glmmTMB)        # Generalized linear mixed models
 library(DHARMa)         # Residual diagnostics for GLMMs
 library(emmeans)        # Estimated marginal means
 library(car)            # ANOVA for models
